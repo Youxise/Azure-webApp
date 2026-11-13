@@ -29,11 +29,11 @@ jobs:
           javac Hello.java
           jar cfm hello.jar manifest.txt Hello.class
 
-      - name: Upload artifact for deployment job
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/*.jar'
+          path: hello.jar
 
   deploy:
     runs-on: ubuntu-latest
